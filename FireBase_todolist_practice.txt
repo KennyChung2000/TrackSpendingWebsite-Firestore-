@@ -1,0 +1,19 @@
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyCh-jnc2fmvCTKyYFPiLFuV2wR-yhfTXtA",
+    authDomain: "todolist-practice-da748.firebaseapp.com",
+    projectId: "todolist-practice-da748",
+    storageBucket: "todolist-practice-da748.appspot.com",
+    messagingSenderId: "332098523145",
+    appId: "1:332098523145:web:b634c0d6118256682ca8d8"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+</script>

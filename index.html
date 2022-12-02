@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="my.css" /> 
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
+</head>
+<bod onload>
+    <div class=" container-fluid">          
+        <table class="table table-hover">                                                                                   <!--表格位置 -->
+            <thead>
+                <tr>
+                    <th scope="col">時間</th>
+                    <th scope="col">類別</th>
+                    <th scope="col">$</th>
+                    <th scope="col">備註</th>
+                    <th scope="col">delete</th>
+                </tr>
+            </thead>
+            <tbody id="tbody1">                                                                                             <!--資料新增位置 -->
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter" role="button" id="record_btn">開始記帳!</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
+
+    <!-- ########################################################################################################################################################### -->
+
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">請輸入金額</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <button type="button" class="btn btn-outline-secondary" id="button1">項目</button>                                 <!--類別輸入框 -->
+                            <button type="button" class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="javascript: void(0)" onclick="change('食物')">食物</a>
+                                <a class="dropdown-item" href="javascript: void(0)" onclick="change('服裝')">服裝</a>
+                                <a class="dropdown-item" href="javascript: void(0)" onclick="change('交通')">交通</a>
+                                <a class="dropdown-item" href="javascript: void(0)" onclick="change('水電')">水電</a>
+                                <a class="dropdown-item" href="javascript: void(0)" onclick="change('生活用品')">生活用品</a>
+                                <a class="dropdown-item" href="javascript: void(0)" onclick="change('娛樂')">娛樂</a>
+                                <div role="separator" class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="javascript: void(0)" onclick="change('其他')">其他</a>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"  placeholder="輸入金額" id="cash_input">        <!--金錢輸入框 -->
+                        <input type="text" name="date" class="form-control datepicker" value="12/02/2022" id="time_value">                     <!--時間輸入框 -->
+                    </div>
+                    <div class="mb-3 row">                                                                                                     
+                        <label for="remark" class="col-sm-2 col-form-label">備註</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="remark">                                                            <!--備註輸入框 -->
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>                                        <!--關閉按鈕 -->
+                    <button type="button" class="btn btn-primary" onclick="save_button()" data-dismiss="modal">Save changes</button>                                        <!--儲存按鈕 -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>
+    <script src="Model.js"></script>
+    <script src="View.js"></script>
+    <script src="Controller.js"></script>
+    
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</body>   
+</html>

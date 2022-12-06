@@ -10,14 +10,14 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker3.min.css">
 </head>
-<bod onload>
+<body onload>
     <div class=" container-fluid">          
         <table class="table table-hover">                                                                                   <!--表格位置 -->
             <thead>
                 <tr>
-                    <th scope="col">時間</th>
-                    <th scope="col">類別</th>
-                    <th scope="col">$</th>
+                    <th scope="col" onclick="sort_array('time')">時間</th>
+                    <th scope="col" onclick="sort_array('type')">類別</th>
+                    <th scope="col" onclick="sort_array('money')">$</th>
                     <th scope="col">備註</th>
                     <th scope="col">delete</th>
                 </tr>
@@ -26,6 +26,7 @@
             </tbody>
         </table>
     </div>
+
     <div class="container">
         <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter" role="button" id="record_btn">開始記帳!</button>
     </div>

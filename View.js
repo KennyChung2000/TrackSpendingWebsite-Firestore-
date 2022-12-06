@@ -30,7 +30,7 @@
             row_1.appendChild(heading_5);
             row_1.appendChild(heading_7);
             row_1.appendChild(heading_8);
-
+            // row_1.setAttribute('class','row');
             document.getElementById('tbody1').appendChild(row_1);
             change_span(type1)
         }                                                                                                      //新增表格
@@ -66,7 +66,17 @@
         elbut.setAttribute('class', 'btn btn-danger'); 
         elbut.setAttribute('type', 'button');
     }
-
+    
+    //刪除page資料
+    function remove_page_data(){
+        let tbody1 = document.getElementById("tbody1");
+        var child = tbody1.lastElementChild; 
+        while (child) { 
+            tbody1.removeChild(child); 
+            child = tbody1.lastElementChild; 
+        } 
+    }
+   
     //日期選擇器
     $('.datepicker').datepicker()
     

@@ -29,6 +29,7 @@
 
     <div class="container">
         <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter" role="button" id="record_btn">開始記帳!</button>
+        <button type ="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter1" role="button" id="search_btn">搜尋</button>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
@@ -79,7 +80,33 @@
             </div>
         </div>
     </div>
+<!--  ####################################################################################################################################-->
     
+<div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title" id="myModalLabel">搜索紀錄</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group">
+                        <input type="text" aria-label="First name" placeholder="月" class="form-control">
+                        <input type="text" aria-label="First name" placeholder="日" class="form-control">
+                        <input type="text" aria-label="Last name" placeholder="年" class="form-control">
+                    </div>
+                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"  placeholder="類別" id="text_input">
+                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"  placeholder="備註" id="text_input">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary " data-dismiss="modal">關閉按鈕</button>
+                    <button type="button" class="btn btn-primary">搜尋</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.0.0/firebase-firestore.js"></script>

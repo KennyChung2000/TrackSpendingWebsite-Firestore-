@@ -16,7 +16,7 @@ function save_array(time,type,money,note,del_id){
         type1:type, 
         money1:parseInt(money, 10),
         note1:note ,
-        del_id:del_id
+        del_id1:del_id
     }
     data_array.push(data); 
 }
@@ -43,9 +43,9 @@ function sort_array(sort_by){
         break;
     }
     console.log(data_array);
-    
-    //刪除目前排序方式
+    //刪除目前page排序方式
     remove_page_data();
+   
 
     //依順序新增page項目
     var i=0;
@@ -54,9 +54,21 @@ function sort_array(sort_by){
             data_array[i].type1,
             data_array[i].money1,
             data_array[i].note1,
-            data_array[i].del_id
+            data_array[i].del_id1
             );  
         i++;  
     }
-    
+}
+
+//刪除陣列刪除的元素
+function delete_data_array(data_id){
+    var i=0;
+    while(data_array[i].del_id1 != data_id){   
+        i++;
+        if(i>data_array.length){
+            break;
+        }
+    }
+    data_array.splice(i,1)
+    console.log(data_array);
 }

@@ -45,7 +45,6 @@
                 alert("未輸入金額或選擇項目");
             }
             console.log(data_array);
-            console.log("123");
         }
 
       
@@ -61,10 +60,13 @@
             }
             else if (change.type === 'modified') {
                 console.log('Modified user: ', change.doc.data());
+                 //資料儲存進array
+                save_array( change.doc.data()['time'],change.doc.data()['type'],change.doc.data()['money'], change.doc.data()['title'],change.doc.data()['id'])
                 add_list( change.doc.data()['time'],change.doc.data()['type'],change.doc.data()['money'], change.doc.data()['title'],change.doc.data()['id'])
             }
             else if (change.type === 'removed') {
                 console.log('Removed user: ', change.doc.data());
+                delete_data_array(change.doc.data().id);
             }
         });
         }, err => {
@@ -76,13 +78,15 @@
         $("#tbody1").on('click', 'button', function () {
             //刪除page資料
             $(this).closest('tr').remove();
+            //刪除firebase資料
             var deletenum = $(this).parent().next().text()
             console.log(deletenum)
-            //刪除firebase資料
             db.collection('users')
             .doc(deletenum)
             .delete()
             .then(() => console.log('Document successfully deleted!')) 
+            //刪除陣列資料
+            
         });
         
         

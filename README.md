@@ -1,5 +1,5 @@
 # TrackSpendingWebsite(Firestore)
-<font size=60>*以firestore為資料庫的小型記帳網頁，使用MVC開發架構* </font>
+<font size=90>*以firestore為資料庫的小型記帳網頁，使用MVC開發架構* </font>
 ## 功能:
  > * 新增
  > * 查詢

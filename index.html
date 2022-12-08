@@ -15,9 +15,9 @@
         <table class="table table-hover">                                                                                   <!--表格位置 -->
             <thead>
                 <tr>
-                    <th scope="col" onclick="sort_array('time')">時間</th>
-                    <th scope="col" onclick="sort_array('type')">類別</th>
-                    <th scope="col" onclick="sort_array('money')">$</th>
+                    <th scope="col" onclick="sort_array('time',search_array)">時間</th>
+                    <th scope="col" onclick="sort_array('type',search_array)">類別</th>
+                    <th scope="col" onclick="sort_array('money',search_array)">$</th>
                     <th scope="col">備註</th>
                     <th scope="col">delete</th>
                 </tr>
@@ -93,16 +93,16 @@
                 </div>
                 <div class="modal-body">
                     <div class="input-group">
-                        <input type="text" aria-label="First name" placeholder="月" class="form-control">
-                        <input type="text" aria-label="First name" placeholder="日" class="form-control">
-                        <input type="text" aria-label="Last name" placeholder="年" class="form-control">
+                        <input type="text" aria-label="First name" placeholder="月" class="form-control" id="month">
+                        <input type="text" aria-label="First name" placeholder="日" class="form-control" id="day">
+                        <input type="text" aria-label="Last name" placeholder="年" class="form-control" id="year">
                     </div>
-                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"  placeholder="類別" id="text_input">
-                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"  placeholder="備註" id="text_input">
+                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"  placeholder="類別" id="type_search">
+                    <input type="text" class="form-control" aria-label="Text input with segmented dropdown button"  placeholder="備註" id="note_search">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary " data-dismiss="modal">關閉按鈕</button>
-                    <button type="button" class="btn btn-primary">搜尋</button>
+                    <button type="button" class="btn btn-primary" onclick="search_data_check()">搜尋</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->

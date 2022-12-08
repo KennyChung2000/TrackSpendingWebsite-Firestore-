@@ -53,6 +53,7 @@
         docSnapshot.docChanges().forEach(change => {
             if (change.type === 'added') {
                 // console.log('New user: ', change.doc.data());
+                console.log(typeof(change.doc.data()) );
                 //資料儲存進array
                 save_array( change.doc.data()['time'],change.doc.data()['type'],change.doc.data()['money'], change.doc.data()['title'],change.doc.data()['id'])
                 //新增頁面資料
@@ -89,7 +90,7 @@
             
         });
         
-        
+      
 
 
 

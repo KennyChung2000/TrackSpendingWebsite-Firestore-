@@ -13,6 +13,7 @@ function save_button(){
 var data_array=[];
 var search_array=data_array;
 
+//將資料存進array
 function save_array(time,type,money,note,del_id){
     let data={
         time1:time, 
@@ -26,7 +27,7 @@ function save_array(time,type,money,note,del_id){
 
 //資料排序
 function sort_array(sort_by,sorted_data_array){
-    //以?值做排序
+    //以輸入值(sort_by)做排序
     switch (sort_by) {
         case 'money':
             sorted_data_array = sorted_data_array.sort(function (a, b) {
@@ -50,6 +51,7 @@ function sort_array(sort_by,sorted_data_array){
     console.log(data_array);
     //刪除目前page排序方式
     remove_page_data();
+    //印出排序好的陣列
     print_data(sorted_data_array)
 }
 
@@ -82,16 +84,18 @@ function delete_data_array(data_id){
 
 //查詢資料
 function search_data_check(){ 
+    //獲取使用者輸入條件
     var search_time=document.getElementById("month").value
     var search_type=document.getElementById("type_search").value
     var search_note = document.getElementById("note_search").value
     var search_time_Boolean=false
     var search_type_Boolean=false
     var search_note_Boolean=false 
+    //初始化放符合條件資料的陣列
     search_array=[];
-    console.log("search_data_check");
     var i=0;
     var j=0;
+    //找符合條件的資料
     while(data_array[i]){
         if(search_time==""){search_time_Boolean=true}
         if(search_type==""){search_type_Boolean=true}
@@ -106,52 +110,9 @@ function search_data_check(){
         }
         i++;
     }
+    //刪除目前頁面的資料
     remove_page_data();
+    //印出搜尋到的頁面資料
     print_data(search_array);
 }
 
-// function search_time(){ 
-//     remove_page_data();
-//     var i=0;
-//     while(data_array[i]){
-//         if(data_array[i].time1==x){
-//             add_list(data_array[i].time1,
-//                 data_array[i].type1,
-//                 data_array[i].money1,
-//                 data_array[i].note1,
-//                 data_array[i].del_id1
-//                 );  
-//         }
-//         i++;  
-//     }
-// }
-// function search_type(){ 
-//     remove_page_data();
-//     var i=0;
-//     while(data_array[i]){
-//         if(data_array[i].time1==x){
-//             add_list(data_array[i].time1,
-//                 data_array[i].type1,
-//                 data_array[i].money1,
-//                 data_array[i].note1,
-//                 data_array[i].del_id1
-//                 );  
-//         }
-//         i++;  
-//     }
-// }
-// function search_note(){ 
-//     remove_page_data();
-//     var i=0;
-//     while(data_array[i]){
-//         if(data_array[i].time1==x){
-//             add_list(data_array[i].time1,
-//                 data_array[i].type1,
-//                 data_array[i].money1,
-//                 data_array[i].note1,
-//                 data_array[i].del_id1
-//                 );  
-//         }
-//         i++;  
-//     }
-// }

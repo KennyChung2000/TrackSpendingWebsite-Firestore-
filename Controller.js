@@ -86,11 +86,17 @@ function delete_data_array(data_id){
 function search_data_check(){ 
     //獲取使用者輸入條件
     var search_time=document.getElementById("month").value
+    var search_time_day=document.getElementById("day").value
+    var search_time_year=document.getElementById("year").value
     var search_type=document.getElementById("type_search").value
     var search_note = document.getElementById("note_search").value
+    
     var search_time_Boolean=false
+    var search_time_day_Boolean=false
+    var search_time_year_Boolean=false
     var search_type_Boolean=false
     var search_note_Boolean=false 
+
     //初始化放符合條件資料的陣列
     search_array=[];
     var i=0;
@@ -98,10 +104,21 @@ function search_data_check(){
     //找符合條件的資料
     while(data_array[i]){
         if(search_time==""){search_time_Boolean=true}
+        if(search_time_day==""){search_time_day_Boolean=true}
+        if(search_time_year==""){search_time_year_Boolean=true}
         if(search_type==""){search_type_Boolean=true}
         if(search_note==""){search_note_Boolean=true}
+        
+        var date_Array = data_array[i].time1.split("/");
+        console.log(date_Array)
+        console.log(date_Array[0]==search_time)
+        console.log(date_Array[1]==search_time_day)
+        console.log(date_Array[2]==search_time_year)
 
-        if( (search_time_Boolean || data_array[i].time1==search_time) &&
+        if( //(search_time_Boolean || data_array[i].time1==search_time) &&
+            (search_time_Boolean || date_Array[0]==search_time) &&
+            (search_time_day_Boolean || date_Array[1]==search_time_day) &&
+            (search_time_year_Boolean || date_Array[2]==search_time_year) &&
             (search_type_Boolean || data_array[i].type1==search_type) &&
             (search_note_Boolean || data_array[i].note1==search_note)
             ){

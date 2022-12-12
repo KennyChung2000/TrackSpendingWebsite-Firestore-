@@ -1,4 +1,4 @@
-﻿document.write('<script  src="Model.js"></script>');
+﻿    document.write('<script  src="Model.js"></script>');
 
     //改變選擇類別 
     function change(x) {                                                                                                                    //改變下拉選單
@@ -66,7 +66,7 @@
         elbut.setAttribute('class', 'btn btn-danger'); 
         elbut.setAttribute('type', 'button');
     }
-    
+
     //刪除page資料
     function remove_page_data(){
         let tbody1 = document.getElementById("tbody1");
@@ -76,7 +76,7 @@
             child = tbody1.lastElementChild; 
         } 
     }
-   
+    
     //日期選擇器
     $('.datepicker').datepicker()
     

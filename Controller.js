@@ -37,7 +37,11 @@ function sort_array(sort_by,sorted_data_array){
 
         case 'time':
             sorted_data_array = sorted_data_array.sort(function (a, b) {
-            return a.time1 > b.time1 ? -1 : 1;
+                let dat_ar=a.time1.split("/")
+                let dat1=dat_ar[2]+dat_ar[0]+dat_ar[1]
+                dat_ar=b.time1.split("/")
+                let dat2=dat_ar[2]+dat_ar[0]+dat_ar[1]
+            return  dat1> dat2 ? -1 : 1;
         });
         break;
         
@@ -53,6 +57,43 @@ function sort_array(sort_by,sorted_data_array){
     remove_page_data();
     //印出排序好的陣列
     print_data(sorted_data_array)
+}
+
+//範圍選取資料
+function select_array(select_data_array){
+    // var select_by= document.getElementById("select_by").value
+    var select_sign=document.getElementById("select_sign").value
+    var select_data=document.getElementById("select_data").value
+    console.log(select_data_array)
+    var select_array=[];
+    switch(select_sign){
+        case'>':
+            select_array = select_data_array.filter(function(a){ 
+                return a.money1>select_data;
+            });
+            break;
+        case'>=':
+            select_array = select_data_array.filter(function(a){ 
+                return a.money1>=select_data;
+            });
+            break;
+        case'<':
+            select_array = select_data_array.filter(function(a){ 
+                return a.money1<select_data;
+            });
+            break;
+        case'<=':
+            select_array = select_data_array.filter(function(a){ 
+                return a.money1<=select_data;
+            });
+            break;
+    }
+   
+    console.log(select_array)
+    search_array=select_array
+    remove_page_data();
+    print_data(select_array)
+
 }
 
 //依順序新增page項目
